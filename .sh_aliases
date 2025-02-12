@@ -1,5 +1,7 @@
 #!/bin/bash
 
+alias c="clear"
+alias ls="ls --color"
 alias ll='ls -alF'
 alias la='ls -Al'
 alias l='ls -CF'
