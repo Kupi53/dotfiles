@@ -16,6 +16,31 @@ return{
   {
     "neovim/nvim-lspconfig",
     config = function()
+
+      -- 🩹 FIX diagnostic display
+      vim.diagnostic.config({
+        virtual_text = {
+          prefix = '●',
+          spacing = 2,
+          source = "if_many",
+        },
+        signs = true,
+        underline = true,
+        update_in_insert = false,
+        severity_sort = true,
+        float = {
+          border = "rounded",
+          source = "always",
+        },
+      })
+
+      -- Optional: Prettier signs in gutter
+      local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+      for type, icon in pairs(signs) do
+        local hl = "DiagnosticSign" .. type
+        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+      end
+
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({capabilities = capabilities})

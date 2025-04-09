@@ -1,12 +1,12 @@
 local map = vim.keymap.set
-local opts = {noremap = true, silent = true}
+local opts = {noremap = true}
 
 vim.g.mapleader = " "
 
 map("n", ";", ":", opts)
 
 -- Disable the spacebar key's default behavior in Normal and Visual modes
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+map({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- delete single character without copying into register
 map('n', 'x', '"_x', opts)
@@ -21,13 +21,13 @@ map('n', 'N', 'Nzzzv', opts)
 
 -- Comment
 map("n", "<leader>/", "gcc", { desc = "Toggle Comment", remap = true })
-map("v", "<leader>/", "gc", { desc = "Toggle comment", remap = true })
+map("v", "<leader>/", "gcc", { desc = "Toggle comment", remap = true })
 
 -- Buffers
 map('n', '<Tab>', ':bnext<CR>', opts)
 map('n', '<S-Tab>', ':bprevious<CR>', opts)
 map('n', '<leader>bx', ':Bdelete!<CR>', opts) -- new buffer
-map('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
+map('n', '<leader>bb', '<cmd> enew <CR>', opts) -- new buffer
 
 -- Window management
 map('n', '<leader>v', '<C-w>v', opts)      -- split window vertically
@@ -47,10 +47,10 @@ map('n', '<Left>', ':vertical resize -2<CR>' )
 map('n', '<Right>', ':vertical resize +2<CR>' )
 
 -- Tabs
-vim.keymap.set('n', '<leader>to', ':tabnew<CR>', opts) -- open new tab
-vim.keymap.set('n', '<leader>tx', ':tabclose<CR>', opts) -- close current tab
-vim.keymap.set('n', '<leader>tn', ':tabn<CR>', opts) --  go to next tab
-vim.keymap.set('n', '<leader>tp', ':tabp<CR>', opts) --  go to previous tab
+map('n', '<leader>to', ':tabnew<CR>', opts) -- open new tab
+map('n', '<leader>tx', ':tabclose<CR>', opts) -- close current tab
+map('n', '<leader>tn', ':tabn<CR>', opts) --  go to next tab
+map('n', '<leader>tp', ':tabp<CR>', opts) --  go to previous tab
 
 -- terminal
 map("t", "<C-h>", "<cmd>wincmd h<CR>", opts)
@@ -63,8 +63,8 @@ map("v", "J", ":m '>+1<CR>gv=gv", opts)
 map("v", "K", ":m '<-2<CR>gv=gv", opts)
 
 -- Stay in indent mode
-vim.keymap.set('v', '<', '<gv', opts)
-vim.keymap.set('v', '>', '>gv', opts)
+map('v', '<', '<gv', opts)
+map('v', '>', '>gv', opts)
 
 -- Keep last yanked when pasting
-vim.keymap.set('v', 'p', '"_dP', opts)
+map('v', 'p', '"_dP', opts)
