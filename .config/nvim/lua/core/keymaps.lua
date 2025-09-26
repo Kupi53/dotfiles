@@ -57,6 +57,7 @@ map("t", "<C-h>", "<cmd>wincmd h<CR>", opts)
 map("t", "<C-j>", "<cmd>wincmd j<CR>", opts)
 map("t", "<C-k>", "<cmd>wincmd k<CR>", opts)
 map("t", "<C-l>", "<cmd>wincmd l<CR>", opts)
+map("t", "<Esc>", "<C-\\><C-N>", opts, {silent = false})
 
 -- visual mode editing
 map("v", "J", ":m '>+1<CR>gv=gv", opts)
