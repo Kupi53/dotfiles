@@ -42,10 +42,13 @@ return{
       end
 
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
-      local lspconfig = require("lspconfig")
-      lspconfig.lua_ls.setup({capabilities = capabilities})
-      lspconfig.clangd.setup({capabilities = capabilities})
-      lspconfig.pyright.setup({capabilities = capabilities})
+      -- local lspconfig = require("lspconfig")
+      vim.lsp.config('lua_ls', {capabilities = capabilities})
+      vim.lsp.config('clangd', {capabilities = capabilities})
+      vim.lsp.config('pyright', {capabilities = capabilities})
+      vim.lsp.enable('lua_ls')
+      vim.lsp.enable('clangd')
+      vim.lsp.enable('pyright')
 
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
