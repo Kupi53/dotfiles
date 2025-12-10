@@ -5,6 +5,9 @@ vim.g.mapleader = " "
 
 map("n", ";", ":", opts)
 
+-- Lint and Format
+map("n", "<space>gg", vim.lsp.buf.format, {})
+
 -- Disable the spacebar key's default behavior in Normal and Visual modes
 map({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 

@@ -118,3 +118,6 @@ if ! shopt -oq posix; then
 fi
 
 neofetch
+export PGDATA="$HOME/postgres_data"
+export PGHOST="/tmp"
+export PGPORT="6996"
