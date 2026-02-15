@@ -8,7 +8,7 @@ alias l='ls -CF'
 alias cours='cd /home/kupi/school/third-year/'
 alias gc='function _gc(){ git add . && git commit -m "$*" && git push; }; _gc'
 alias nf=neofetch
-alias dot="cd ~/.dotfiles"
+alias dotfiles="cd ~/.dotfiles"
 alias cf="clang-format -i *.c ; clang-format -i *.h"
 alias gcd="gcc -std=c99 -pedantic -Werror -Wall -Wextra -Wvla -fsanitize=address -O0 -g"
 alias gdb="gdb -q --tui"
