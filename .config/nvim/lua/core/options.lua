@@ -15,6 +15,8 @@ vim.opt.cursorline = true
 
 vim.opt.termguicolors = true -- For bufferline plugin to work properly
 
+vim.g.vimtex_view_method = "zathura"
+
 
 
 

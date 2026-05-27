@@ -7,6 +7,8 @@ map("n", ";", ":", opts)
 
 -- Lint and Format
 map("n", "<space>gg", vim.lsp.buf.format, {})
+map("n", "<leader>gd", vim.lsp.buf.definition, {desc = "Go to definition"})
+vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 
 -- Disable the spacebar key's default behavior in Normal and Visual modes
 map({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
@@ -72,3 +74,5 @@ map('v', '>', '>gv', opts)
 
 -- Keep last yanked when pasting
 map('v', 'p', '"_dP', opts)
+
+

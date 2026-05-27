@@ -7,7 +7,7 @@ return {
       ensure_installed = {"java", "lua", "c", "cpp", "c_sharp", "python" },
       auto_install = true,
       highlight = { enable = true },
-      indent = { enable = true },
+      indent = { enable = false},
     })
   end
 }
