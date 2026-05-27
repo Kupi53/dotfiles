@@ -121,3 +121,4 @@ neofetch
 export PGDATA="$HOME/postgres_data"
 export PGHOST="/tmp"
 export PGPORT="6996"
+. "/home/kupi/.deno/env"
